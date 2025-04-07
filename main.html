@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Completo - 250 Questões</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .quiz-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .question-number {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .question {
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .options {
+            margin: 20px 0;
+        }
+
+        .option {
+            display: block;
+            margin: 12px 0;
+            padding: 12px;
+            background-color: #f8f8f8;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        .option.correct {
+            background-color: #d4edda;
+            border-color: #28a745;
+        }
+
+        .option.incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+        }
+
+        .navigation {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        #prevBtn {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        #nextBtn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .score {
+            text-align: center;
+            font-size: 1.3em;
+            margin: 25px 0;
+            color: #333;
+        }
+
+        .progress {
+            width: 100%;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            height: 10px;
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #28a745;
+            border-radius: 8px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="score" id="score">Pontuação: 0/0</div>
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="question-number" id="questionNumber"></div>
+        <div class="question" id="question"></div>
+        <div class="options" id="options"></div>
+        <div class="navigation">
+            <button id="prevBtn" onclick="previousQuestion()" disabled>Anterior</button>
+            <button id="nextBtn" onclick="nextQuestion()">Próxima</button>
+        </div>
+    </div>
+
+    <script>
+        let questions = [];
+        let currentQuestion = 0;
+        let score = 0;
+        let userAnswers = new Array(300).fill(null);
+
+        async function loadQuestions() {
+            try {
+                const response = await fetch('bancoQuestoes.csv');
+                const csvData = await response.text();
+                parseCSV(csvData);
+                showQuestion();
+            } catch (error) {
+                alert('Erro ao carregar as questões. Verifique o arquivo CSV.');
+                console.error(error);
+            }
+        }
+
+        function parseCSV(csv) {
+            const lines = csv.split('\n').filter(line => line.trim() !== '');
+            const headers = lines[0].split(',');
+            
+            for(let i = 1; i < lines.length; i++) {
+                const data = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+                if(data.length === headers.length) {
+                    const question = {
+                        text: data[0].replace(/^"|"$/g, ''),
+                        options: data.slice(1, 5).map(opt => opt.replace(/^"|"$/g, '')),
+                        correct: data[5].trim().toLowerCase()
+                    };
+                    questions.push(question);
+                }
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentQuestion / questions.length) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            document.getElementById('questionNumber').textContent = 
+                `Questão ${currentQuestion + 1} de ${questions.length}`;
+        }
+
+        function showQuestion() {
+            const question = questions[currentQuestion];
+            document.getElementById('question').textContent = question.text;
+            
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                optionDiv.textContent = option;
+                optionDiv.dataset.option = String.fromCharCode(97 + index);
+                
+                if(userAnswers[currentQuestion] === String.fromCharCode(97 + index)) {
+                    optionDiv.classList.add(
+                        userAnswers[currentQuestion] === question.correct ? 'correct' : 'incorrect'
+                    );
+                }
+                
+                optionDiv.onclick = () => selectOption(optionDiv);
+                optionsDiv.appendChild(optionDiv);
+            });
+
+            document.getElementById('prevBtn').disabled = currentQuestion === 0;
+            document.getElementById('nextBtn').disabled = userAnswers[currentQuestion] === null;
+            document.getElementById('score').textContent = `Pontuação: ${score}/${questions.length}`;
+            updateProgress();
+        }
+
+        function selectOption(selected) {
+            if(userAnswers[currentQuestion] !== null) return;
+
+            const options = document.querySelectorAll('.option');
+            userAnswers[currentQuestion] = selected.dataset.option;
+
+            options.forEach(opt => {
+                opt.onclick = null;
+                if(opt.dataset.option === questions[currentQuestion].correct) {
+                    opt.classList.add('correct');
+                }
+            });
+
+            if(selected.dataset.option === questions[currentQuestion].correct) {
+                score++;
+            }
+
+            selected.classList.add(
+                selected.dataset.option === questions[currentQuestion].correct ? 'correct' : 'incorrect'
+            );
+
+            document.getElementById('nextBtn').disabled = false;
+            document.getElementById('score').textContent = `Pontuação: ${score}/${questions.length}`;
+        }
+
+        function nextQuestion() {
+            if(currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                showFinalResults();
+            }
+        }
+
+        function previousQuestion() {
+            if(currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+            }
+        }
+
+        function showFinalResults() {
+            const container = document.querySelector('.quiz-container');
+            container.innerHTML = `
+                <h2>Quiz Concluído!</h2>
+                <p>Sua pontuação final: ${score}/${questions.length}</p>
+                <p>Acertos: ${((score/questions.length)*100).toFixed(1)}%</p>
+                <button onclick="location.reload()">Refazer Quiz</button>
+            `;
+            container.style.textAlign = 'center';
+        }
+
+        // Inicialização
+        loadQuestions();
+    </script>
+</body>
+</html>

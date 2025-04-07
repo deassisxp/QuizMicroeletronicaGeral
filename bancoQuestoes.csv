@@ -1,0 +1,301 @@
+Question,Option A,Option B,Option C,Option D,Correct Answer
+"What is the primary goal of verification in digital design?","a) Reduce power consumption","b) Ensure correctness of the design","c) Improve chip yield","d) Minimize fabrication cost",b
+"Which of the following is a key principle of object-oriented programming?","a) Timing analysis","b) Modularity","c) Sequential logic","d) RTL synthesis",b
+"In SystemVerilog, a class is used to define:","a) Hardware components","b) Testbenches and verification objects","c) Gate-level circuits","d) Clock domains",b
+"Which concept allows different classes to share behavior in OOP?","a) Polymorphism","b) Multiplexing","c) Overclocking","d) Elaboration",a
+"The process of checking if the design meets the specification is called:","a) Simulation","b) Verification","c) Synthesis","d) Compilation",b
+"Which SystemVerilog construct supports encapsulation of data and functions?","a) Module","b) Interface","c) Class","d) Task",c
+"What is the benefit of inheritance in SystemVerilog classes?","a) Reduces memory usage","b) Improves timing closure","c) Promotes code reuse","d) Helps RTL synthesis",c
+"In object-oriented verification, a testbench component that generates stimulus is called:","a) Driver","b) Monitor","c) Sequencer","d) Generator",d
+"Which of the following best defines 'randomization' in verification?","a) Using test vectors with fixed values","b) Applying random stimuli to check different scenarios","c) Running the simulation in reverse","d) Shuffling modules in the design",b
+"A virtual interface in SystemVerilog is primarily used to:","a) Instantiate hardware components","b) Access design signals in classes","c) Create physical connections","d) Convert signals from analog to digital",b
+"What is the primary output of the logic synthesis stage?","a) GDSII file","b) Netlist","c) RTL code","d) Physical layout",b
+"Which file format contains technology-specific timing and power data for standard cells?","a) LEF","b) .lib","c) DEF","d) SDC",b
+"What does SDC stand for in the context of ASIC design?","a) Standard Design Constraints","b) Synthesis Data Configuration","c) Static Delay Calculation","d) System Design Clock",a
+"Which phase follows RTL verification in the ASIC flow?","a) Physical synthesis","b) Logic synthesis","c) Bring-up","d) Tapeout",b
+"What is the purpose of the 'elaborate' step in logic synthesis?","a) Apply timing constraints","b) Generate a technology-mapped netlist","c) Create a dataflow graph and optimize HDL","d) Read HDL files",c
+"Which optimization technique merges two arithmetic modules into one if they aren’t used simultaneously?","a) Retiming","b) Resource sharing","c) Constant propagation","d) Logic pruning",b
+"What is the main goal of 'mapped synthesis'?","a) Convert RTL to generic gates","b) Optimize for area while meeting timing constraints","c) Insert test structures","d) Generate clock trees",b
+"Which three design rule constraints must be satisfied during synthesis?","a) Max transition, fanout, and capacitance","b) Min delay, skew, and jitter","c) Power, area, and speed","d) Setup, hold, and recovery",a
+"What does 'clock latency' refer to?","a) Jitter in the clock signal","b) Delay from clock source to endpoint","c) Uncertainty in clock edges","d) Mismatch between clock periods",b
+"Which command sets the clock period to 10 ns in SDC?","a) `set_clock_period 10`","b) `create_clock -period 10`","c) `set_clock_latency 10`","d) `set_clock_uncertainty 10`",b
+"What is the purpose of `set_input_delay`?","a) Define propagation delay for input ports","b) Specify time data arrives relative to a clock edge","c) Set transition time for input signals","d) Configure input driver strength",b
+"Which analysis checks if data arrives too late at a flip-flop?","a) Hold time","b) Setup time","c) Recovery time","d) Jitter analysis",b
+"In worst-case operating conditions, which combination is used?","a) Fast process, low temperature, high voltage","b) Slow process, high temperature, low voltage","c) Typical process, room temperature, nominal voltage","d) Fast process, high temperature, low voltage",b
+"Which file describes physical geometry and routing rules for cells?","a) .lib","b) LEF","c) DEF","d) SPEF",b
+"What does SPEF contain?","a) Parasitic resistance and capacitance data","b) Clock constraints","c) Gate-level netlist","d) Power dissipation values",a
+"What is the primary purpose of MMMC in physical synthesis?","a) Optimize power consumption","b) Analyze timing across multiple corners and modes","c) Generate test patterns","d) Insert filler cells",b
+"Which step ensures clock signals reach all flip-flops with minimal skew?","a) Placement","b) Routing","c) Clock Tree Synthesis (CTS)","d) Floorplanning",c
+"Dynamic power dissipation is primarily caused by:","a) Leakage currents","b) Charging/discharging capacitances","c) Short-circuit currents","d) Temperature variations",b
+"Which factor does *not* affect leakage power?","a) Input slew rate","b) Transistor threshold voltage","c) Temperature","d) Process variations",a
+"What is the role of `set_ideal_net`?","a) Exclude a net from timing analysis","b) Optimize a net for minimal delay","c) Mark a net as non-critical for DRC","d) Assign a fixed voltage level",c
+"Which command reports transition violations in synthesis?","a) `report_timing`","b) `report_constraints`","c) `report_design_rules`","d) `report_power`",c
+"In hold time analysis, which corner is typically used?","a) Slow process, high voltage","b) Fast process, low voltage","c) Typical process, nominal voltage","d) Slow process, low temperature",b
+"What does 'negative slack' indicate in timing reports?","a) Timing requirements are met","b) Data arrives earlier than required","c) Data arrives later than required","d) Clock period is too long",c
+"Which file format is used for post-layout gate-level simulations?","a) VCD","b) LEF","c) SDC","d) GDSII",a
+"What is the final step before tapeout?","a) Logic synthesis","b) Physical verification","c) RTL coding","d) Power planning",b
+"Which parameter is *not* part of PVT analysis?","a) Process","b) Voltage","c) Temperature","d) Jitter",d
+"Which tool is commonly used for physical synthesis?","a) Genus","b) Innovus","c) Design Compiler","d) Primetime",b
+"What is the primary purpose of a CapTable file?","a) Define metal layer capacitances","b) Store clock constraints","c) Describe cell geometries","d) Optimize power consumption",a
+"Which phase defines the chip's core and I/O regions?","a) Floorplanning","b) Placement","c) Routing","d) CTS",a
+"What does 'DFM' stand for?","a) Design for Manufacturing","b) Digital Floorplanning Method","c) Delay Fault Modeling","d) Dynamic Frequency Modulation",a
+"Which command sets a load capacitance on an output port?","a) `set_load`","b) `set_driving_cell`","c) `set_max_capacitance`","d) `set_fanout_load`",a
+"Which factor increases cell delay?","a) Lower output capacitance","b) Faster input transition","c) Higher supply voltage","d) Slower input transition",d
+"What is 'IR drop' related to?","a) Clock skew","b) Power grid resistance","c) Hold violations","d) Leakage power",b
+"Which analysis view combines slow library and worst RC corner?","a) Setup analysis","b) Hold analysis","c) Best-case corner","d) Typical corner",a
+"What is the purpose of filler cells in physical design?","a) Improve timing","b) Reduce power noise","c) Fill empty spaces between standard cells","d) Connect power rails",c
+"Which step ensures minimal DRC violations post-routing?","a) Global routing","b) Detailed routing","c) Trial routing","d) Clock routing",b
+"Which file is used to exchange physical design information?","a) .lib","b) DEF","c) SDC","d) SPEF",b
+"What does 'OCV' stand for in timing analysis?","a) On-Chip Variation","b) Output Clock Voltage","c) Optimal Cell Verification","d) Operating Condition Validation",a
+"Which optimization technique repositions registers to balance delays?","a) Retiming","b) Cloning","c) Buffering","d) Resizing",a
+"Which parameter is part of leakage power modeling in .lib?","a) Input slew","b) Output load","c) When clause","d) Transition time",c
+"What is the primary goal of power plan synthesis?","a) Minimize IR drop","b) Reduce clock skew","c) Optimize cell placement","d) Eliminate hold violations",a
+"Which file is generated after parasitic extraction?","a) LEF","b) SPEF","c) DEF","d) SDC",b
+"Which step follows placement in physical synthesis?","a) CTS","b) Routing","c) Floorplanning","d) Optimization",a
+"Which command reads switching activity data for power analysis?","a) `read_sdc`","b) `read_vcd`","c) `read_parasitics`","d) `read_lib`",b
+"What is the effect of increasing clock uncertainty?","a) Reduces setup slack","b) Increases hold slack","c) Improves timing margin","d) Has no impact on timing",a
+"Which layer is *not* part of a standard cell?","a) Metal1","b) Poly","c) Diffusion","d) Analog",d
+"What is the primary use of a virtual clock in SDC?","a) Model external clock domains","b) Reduce clock latency","c) Eliminate jitter","d) Optimize power",a
+"Which factor does *not* affect cell delay?","a) Input transition","b) Output load","c) Operating voltage","d) Net length",d
+"What is the primary purpose of hold time fixes?","a) Insert buffers to slow down fast paths","b) Remove buffers to speed up slow paths","c) Balance clock skew","d) Reduce power consumption",a
+"Which metric is used to normalize area reports?","a) NAND2 equivalent area","b) Flip-flop count","c) Metal layer pitch","d) Clock frequency",a
+"Which of the following is a method of dynamically creating objects in SystemVerilog?","a) new MyClass();","b) obj = new;","c) obj.new();","d) create obj;",b
+"What will the following code print?","a) Packet ID: 0","b) Packet ID: 7","c) Compile error","d) Simulation error",b
+"Which of the following concepts is demonstrated by classes extending other classes?","a) Inheritance","b) Encapsulation","c) Polymorphism","d) Overloading",a
+"What is the output of this code?","a) Base","b) Derived","c) Compile-time error","d) Nothing",b
+"Which SystemVerilog keyword is required for polymorphism to work properly with base class methods?","a) final","b) super","c) virtual","d) static",c
+"In OOP-based testbenches, the component responsible for driving signals onto the DUT interface is called:","a) Monitor","b) Agent","c) Driver","d) Scoreboard",c
+"A randomizable class in SystemVerilog requires which keyword?","a) rand","b) random","c) bit","d) uniform",a
+"Which statement is true about the given class?","a) addr will always be 0","b) addr will be a random 8-bit value","c) Code will not compile","d) addr must be constrained",b
+"Which class method is used for constraining values before randomization?","a) setup()","b) constrain()","c) randomize()","d) inside()",c
+"Which of the following is NOT a feature of object-oriented programming?","a) Abstraction","b) Inheritance","c) Randomization","d) Encapsulation",c
+"What does the following code demonstrate?","a) Inheritance","b) Constraint randomization","c) Static assignment","d) Overloading",b
+"Which class member can be accessed without creating an object?","a) rand bit val;","b) function void show();","c) static int count;","d) new();",c
+"What is the main use of factory pattern in UVM or SystemVerilog verification environments?","a) To compile code faster","b) To automate DUT instantiation","c) To enable dynamic object creation and overrides","d) To connect interfaces",c
+"Which SystemVerilog data type is used to declare a class handle?","a) int","b) bit","c) class","d) Class name",d
+"What does $random return in SystemVerilog?","a) A fixed constant","b) A deterministic pattern","c) A 32-bit signed random value","d) An error if not constrained",c
+"What will this print?","a) 1","b) 2","c) 0","d) Error",b
+"Which of the following allows method overriding?","a) static","b) const","c) virtual","d) rand",c
+"In SystemVerilog, a covergroup is used for:","a) Creating hardware registers","b) Collecting functional coverage","c) Defining assertions","d) Writing sequencers",b
+"What is wrong with this code?","a) Value will be between 4 and 8","b) This is a valid constraint","c) Conflict in constraint – unsatisfiable","d) Syntax error",c
+"What does this piece of code show?","a) Displays Base","b) Displays Child","c) Compile-time error","d) Nothing",a
+"What will be the result of this code?","a) A","b) B","c) Compilation error","d) Nothing is printed",b
+"Which OOP principle allows treating objects of different subclasses uniformly?","a) Overriding","b) Abstraction","c) Polymorphism","d) Instantiation",c
+"What is the purpose of a constructor in SystemVerilog?","a) Overload a class","b) Initialize the object on creation","c) Simulate logic","d) Randomize fields",b
+"Which keyword is used to declare a constructor in a class?","a) constructor","b) class()","c) new","d) init",c
+"What is the default return type of functions in SystemVerilog?","a) bit","b) int","c) void","d) Must be declared explicitly",d
+"Which feature of SystemVerilog classes enables code reuse by passing data between base and derived classes?","a) Encapsulation","b) Randomization","c) Inheritance","d) Typedef",c
+"Which code correctly demonstrates field constraint using inside?","a) 0–7","b) 0–4 and 7","c) Only 7","d) 0–4",b
+"How do you define an abstract method in SystemVerilog?","a) Use abstract keyword","b) Declare virtual function with no body","c) Use extern with pure","d) Use virtual pure",c
+"What is printed here?","a) 0","b) 1","c) 2","d) Compilation error",c
+"Which class method is automatically called when an object is created?","a) create()","b) build()","c) new()","d) start()",c
+"What is the role of the monitor in a verification environment?","a) Drives transactions","b) Observes DUT outputs","c) Generates random data","d) Collects coverage",b
+"What is the output?","a) Base","b) Derived","c) Base then Derived","d) Error",c
+"Which method is used to check if randomization succeeded?","a) assert()","b) cover()","c) randomize()","d) check_random()",c
+"In class-based verification, what does super.new() do?","a) Destroys the object","b) Inherits all variables","c) Calls the base class constructor","d) Randomizes fields",c
+"What is a key difference between static and instance class members?","a) Static members are copied per object","b) Static members belong to all instances collectively","c) Instance members are not allowed in SystemVerilog","d) Instance members cannot be accessed in constructors",b
+"What’s the main benefit of using virtual interfaces in class-based testbenches?","a) They enable randomization","b) They allow connecting class-based components to DUT signals","c) They prevent data races","d) They delay signal propagation",b
+"Which statement is true about constrained random verification?","a) Only works with modules","b) Provides complete design coverage","c) Helps generate legal and illegal test scenarios","d) Is slower than directed tests",c
+"What will this display?","a) 0","b) 10","c) Compile error","d) Runtime error",b
+"Which is NOT a valid coverage metric in verification?","a) Code coverage","b) Functional coverage","c) Assertion coverage","d) Color coverage",d
+"What does this constraint achieve?","a) Generates odd numbers","b) Prevents compile-time errors","c) Randomizes val to be even","d) Prevents randomization",c
+"Which keyword is used to define a hardware module in SystemVerilog?","a) mod","b) entity","c) module","d) process",c
+"What is the output of this logic? module simple; logic a = 1'b1; logic b = 1'b0; logic y; assign y = a & b; endmodule","a) y = 1","b) y = 0","c) y = z","d) Compile error",b
+"Which of the following types supports 4-state logic?","a) bit","b) logic","c) int","d) reg",b
+"What is the difference between bit and logic in SystemVerilog?","a) bit supports 4 states, logic supports 2","b) bit supports 2 states, logic supports 4","c) Both are 4-state","d) bit is only for inputs",b
+"What is the correct way to declare a 16-bit bus signal?","a) logic[15:0] data;","b) bit data[16];","c) wire bus<16>;","d) reg[0:15] data;",a
+"Which process is best for modeling combinational logic?","a) always_latch","b) always_comb","c) initial","d) always_ff",b
+"What will this sequential block infer in hardware? always_ff @(posedge clk) q <= d;","a) Latch","b) AND gate","c) D Flip-Flop","d) Buffer",c
+"Which is NOT a valid SystemVerilog keyword for process type?","a) always_ff","b) always_comb","c) always_block","d) always_latch",c
+"What does the following code represent? assign y = (sel) ? a : b;","a) Decoder","b) Multiplexer","c) Demux","d) Flip-Flop",b
+"What is the default value of a logic signal not initialized?","a) 0","b) x","c) 1","d) z",b
+"What hardware does this process describe? always_ff @(posedge clk or posedge rst) begin if (rst) q <= 0; else q <= d; end","a) D latch","b) Resettable D Flip-Flop","c) JK Flip-Flop","d) AND gate",b
+"Which of the following allows for 2-state variables only?","a) logic","b) bit","c) reg","d) wire",b
+"What does this module implement? module and_gate(input logic a, b, output logic y); assign y = a & b; endmodule","a) OR gate","b) AND gate","c) XOR gate","d) NAND gate",b
+"What is the correct syntax to instantiate a module named adder?","a) adder add();","b) module adder();","c) adder u1(.a(a), .b(b), .sum(sum));","d) call adder();",c
+"Which directive avoids multiple inclusion of the same file?","a) #ifndef / #define","b) #pragma protect","c) module guard","d) ifdef_once",a
+"Which code snippet will synthesize correctly?","a) initial begin forever #5 clk = ~clk; end","b) assign clk = #5 ~clk;","c) always begin #5 clk = ~clk; end","d) always @(posedge clk) clk = ~clk;",a
+"Which code represents a 4-to-1 multiplexer? always_comb case (sel) 2'b00: y = a; 2'b01: y = b; 2'b10: y = c; 2'b11: y = d; endcase","a) Encoder","b) Multiplexer","c) Comparator","d) Shift register",b
+"Which kind of signal assignment allows multiple drivers in a bus?","a) logic","b) bit","c) reg","d) tri",d
+"What’s the difference between assign and always_comb?","a) assign is for procedural logic","b) always_comb is synthesizable, assign is not","c) assign is for continuous assignment","d) No difference",c
+"What is a correct reason to prefer logic over reg in SystemVerilog?","a) reg can’t be synthesized","b) logic is used for continuous assignments","c) logic unifies reg and wire behavior","d) reg is deprecated in SystemVerilog",c
+"Which of the following describes a latch? always_latch if (en) q <= d;","a) Combinational","b) Synchronous","c) Level-sensitive storage","d) Edge-triggered",c
+"What will the following code do? assign y = ~(a & b);","a) NAND","b) AND","c) NOT","d) OR",a
+"What is the minimum bit-width needed to represent numbers 0 to 15?","a) 2","b) 3","c) 4","d) 5",c
+"Which type is typically used for clock or reset signals?","a) int","b) bit","c) logic","d) wire",c
+"What’s the result of this operation? logic [3:0] a = 4'b1010; logic [3:0] b = 4'b1100; logic [3:0] y = a ^ b;","a) 1110","b) 0110","c) 1001","d) 0010",b
+"Which coding style best fits synthesis for flip-flops?","a) always_comb","b) assign","c) always_ff","d) initial",c
+"Which control structure is not synthesizable?","a) if","b) case","c) for","d) forever",d
+"Which module describes a D Flip-Flop with enable? always_ff @(posedge clk) if (en) q <= d;","a) Clock divider","b) Latch","c) Gated flip-flop","d) Counter",c
+"Which of the following is not a valid signal declaration in SV?","a) logic[7:0] data;","b) bit[3:0] count;","c) wire clk;","d) var bus[7:0];",d
+"What does this arithmetic operation produce? logic [3:0] a = 4'd5; logic [3:0] b = 4'd3; logic [4:0] sum = a + b;","a) sum = 8","b) sum = 5","c) sum = 2","d) Error due to width mismatch",a
+"What function is implemented by this ALU segment? always_comb begin case (sel) 2'b00: y = a + b; 2'b01: y = a - b; 2'b10: y = a & b; 2'b11: y = a | b; endcase end","a) Simple MUX","b) 2-bit Counter","c) 4-function ALU","d) Priority Encoder",c
+"What is the output when sel = 2'b10, a = 4'b1100, and b = 4'b1010 in the ALU above?","a) 1000","b) 0110","c) 1110","d) 0100",a
+"Which part of a basic ULA performs logical operations?","a) Shifter","b) Arithmetic block","c) Logic unit","d) Decoder",c
+"Which type of circuit does this describe? always_ff @(posedge clk or posedge rst) if (rst) count <= 0; else count <= count + 1;","a) Shift register","b) Down counter","c) Up counter with async reset","d) Latch",c
+"What is the function of this circuit? always_ff @(posedge clk) shift_reg <= {shift_reg[2:0], din};","a) D Flip-Flop","b) 4-bit Left Shift Register","c) Up Counter","d) Serial Adder",b
+"In the ALU below, what happens if sel has an invalid value (e.g., 2’bxx)? always_comb begin case (sel) 2'b00: y = a + b; 2'b01: y = a - b; 2'b10: y = a & b; 2'b11: y = a | b; endcase end","a) y = 0","b) y retains previous value","c) y = x (unknown)","d) Syntax error",c
+"Which of the following best describes a structural model in HDL?","a) Uses equations only","b) Based on always_comb blocks","c) Connects modules via instances and ports","d) Uses behavioral if and case",c
+"What is the output of this 2-bit comparator when A = 2’b11, B = 2’b10? assign lt = (A < B); assign eq = (A == B); assign gt = (A > B);","a) lt = 1, eq = 0, gt = 0","b) lt = 0, eq = 0, gt = 1","c) lt = 0, eq = 1, gt = 0","d) All zeros",b
+"What operation is being described here? assign y = a << 2;","a) Add 2","b) Multiply by 4","c) Divide by 2","d) Right shift",b
+"What kind of circuit is this? always_comb y = (a & ~b) | (~a & b);","a) NAND gate","b) XOR gate","c) NOR gate","d) AND-OR gate",b
+"What is the main advantage of using typedef in HDL?","a) Saves memory","b) Faster simulation","c) Improves code readability and reuse","d) Forces bit-width optimizations",c
+"Given this shift register, what is the final value of q after 4 cycles with din=1? always_ff @(posedge clk) q <= {q[2:0], din};","a) 0001","b) 1111","c) 1000","d) 0000",b
+"What is the minimum size of a bus that can represent numbers up to 1023?","a) 8","b) 9","c) 10","d) 11",c
+"What logic function is implemented by this circuit? assign y = ~(a | b);","a) NOR","b) NAND","c) AND","d) XOR",a
+"What is the key benefit of separating RTL and testbench code in HDL design?","a) RTL runs faster","b) Allows hardware reuse","c) Encourages modularity and testability","d) Enables parallel execution",c
+"What does this code represent? assign y = (a == b) ? 1'b1 : 1'b0;","a) Decoder","b) Equality comparator","c) Priority logic","d) NOR gate",b
+"Which of the following components are typically part of a basic ALU?","a) Comparator, Multiplier, Memory","b) Shifter, Logic Unit, Adder","c) Register File, Decoder, Timer","d) Latch, RAM, PLL",b
+"What is the result of a = 4’b1010; b = 4’b0110; a & b?","a) 1111","b) 0010","c) 1110","d) 0100",d
+"What is the effect of this operation in RTL? assign a = b + 1;","a) Shift left","b) Increment b","c) Store b","d) Toggle a",b
+"Which signal declaration is suitable for synthesizable hardware modeling?","a) logic signed [7:0] data;","b) int data;","c) real voltage;","d) time t;",a
+"What is the purpose of functional verification?","a) To reduce power consumption","b) To verify logic synthesis","c) To confirm the design works according to specifications","d) To perform layout optimization",c
+"What does formal verification use to prove design correctness?","a) Simulation time","b) Random stimulus","c) Mathematical proofs","d) Hardware emulation",c
+"What is the main advantage of formal verification over simulation?","a) Faster hardware implementation","b) Can exhaustively prove properties without test vectors","c) Better clock analysis","d) Lower power simulation",b
+"Which SystemVerilog construct is used for formal verification?","a) always_comb","b) covergroup","c) assert property","d) initial",c
+"What is the purpose of the following code? assert property (@(posedge clk) req |-> ##1 gnt);","a) Asserts grant occurs 1 cycle after request","b) Blocks grant until request","c) Covers the request signal","d) Generates test vectors",a
+"What type of verification does cover property support?","a) Formal assertion coverage","b) Code coverage","c) Line coverage","d) Register coverage",a
+"Which of the following is not a type of functional coverage?","a) Cross coverage","b) Toggle coverage","c) Coverpoint","d) Sequence coverage",b
+"In UVM, which component generates stimulus?","a) Monitor","b) Driver","c) Sequencer","d) Scoreboard",c
+"What is the role of a UVM monitor?","a) Drives DUT inputs","b) Modifies testbench variables","c) Observes DUT outputs and collects transactions","d) Generates test vectors",c
+"What does this assertion check? property p1; @(posedge clk) a ##1 b ##1 c; endproperty","a) a, b, and c occur in any order","b) a is followed by b, then c in consecutive cycles","c) a and b occur together","d) a prevents c from occurring",b
+"Which UVM component is responsible for driving transactions to the DUT interface?","a) Sequencer","b) Driver","c) Monitor","d) Scoreboard",b
+"In UVM, which component is optional and used only for checking DUT outputs?","a) Driver","b) Monitor","c) Sequencer","d) Scoreboard",d
+"What does the UVM sequencer do?","a) Applies input waveforms to the DUT","b) Creates test cases","c) Controls the flow of sequences to the driver","d) Checks output correctness",c
+"Which UVM component creates randomized transactions?","a) Transaction class","b) Driver","c) Interface","d) DUT",a
+"What is the primary function of the UVM agent?","a) Only monitors signals","b) Groups sequencer, driver, and monitor into one unit","c) Applies assertions","d) Generates coverage reports",b
+"What does the following code describe in a UVM testbench? class my_transaction extends uvm_sequence_item; rand bit [3:0] a, b; constraint valid_range { a < 10; b < 10; } endclass","a) Fixed data vector","b) A constrained-random stimulus object","c) Assertion checker","d) UVM monitor",b
+"Which method is used to generate constrained-random values in UVM?","a) .apply()","b) .gen()","c) .randomize()","d) .assign()",c
+"Which UVM component converts sequence items into pin-level signals?","a) Driver","b) Monitor","c) Sequencer","d) Agent",a
+"What happens if a randomization constraint is unsatisfiable?","a) Simulation halts","b) A warning is issued, and default values are used","c) Randomize() returns 0 (failure)","d) Variables are set to maximum values",c
+"What is the role of the following code? class my_driver extends uvm_driver #(my_transaction); virtual interface my_if; ... endclass","a) Connects sequencer to monitor","b) Transfers virtual interface to scoreboard","c) Defines a driver to apply transactions to my_if","d) Generates random input values",c
+"Which UVM phase is used to construct and configure components?","a) run_phase","b) connect_phase","c) build_phase","d) report_phase",c
+"What is the correct order of typical UVM phases?","a) build → report → run → connect","b) connect → build → report → run","c) build → connect → run → report","d) run → build → connect → report",c
+"Which phase is responsible for simulation time activities?","a) build_phase","b) run_phase","c) connect_phase","d) final_phase",b
+"What does the uvm_config_db do?","a) Logs coverage data","b) Manages interface wiring","c) Shares configuration objects among components","d) Randomizes sequence items",c
+"How do you override a UVM component at runtime using the factory?","a) uvm_config_db#(...)::override()","b) set_type_override_by_name()","c) uvm_factory::force()","d) randomize().override()",b
+"What is the purpose of the following code snippet? uvm_config_db#(virtual my_if)::set(this, "*", "vif", vif);","a) Instantiates a DUT","b) Binds interface to UVM environment","c) Sets a coverage object","d) Creates a new test",b
+"What is the expected behavior of this UVM sequence code? task body(); req = my_transaction::type_id::create("req"); start_item(req); if (!req.randomize()) `uvm_fatal("RAND", "Randomization failed") finish_item(req); endtask","a) Monitors DUT responses","b) Randomizes and sends a transaction to the driver","c) Creates coverage points","d) Declares interface variables",b
+"In UVM, what does start_item() do?","a) Initializes coverage monitor","b) Starts signal tracing","c) Prepares a transaction before randomization","d) Starts a test sequence",c
+"Which component typically calls get_next_item()?","a) Sequencer","b) Monitor","c) Scoreboard","d) Driver",d
+"What does this UVM driver code represent? task run_phase(uvm_phase phase); forever begin seq_item_port.get_next_item(req); // drive signals seq_item_port.item_done(); end endtask","a) Sequence creation logic","b) Random constraint setup","c) Transaction execution loop","d) Scoreboard checking",c
+"What is a passive UVM agent typically used for?","a) Driving DUT inputs","b) Observing DUT behavior without driving","c) Generating stimulus","d) Randomizing configuration objects",b
+"Which of the following is not usually part of a UVM agent?","a) Sequencer","b) Interface","c) Monitor","d) Driver",b
+"What does the following assertion check? property grant_check; @(posedge clk) req |-> ##1 gnt; endproperty assert property (grant_check);","a) gnt must happen at the same time as req","b) req must occur after gnt","c) gnt must follow req by one clock cycle","d) gnt is always low after req",c
+"What happens if the assertion above fails during simulation?","a) It silently fails","b) Simulation continues normally","c) A fatal error or warning is reported, depending on settings","d) The assertion is ignored",c
+"Given a UVM environment with two agents, what should be done to differentiate their configurations?","a) Name them identically","b) Use different classes","c) Use different hierarchical paths in uvm_config_db::set()","d) Call randomize() for both",c
+"Which of the following is true about UVM environments with multiple agents?","a) All agents must share the same driver","b) Only one agent can be active","c) Each agent can be independently passive or active","d) Only one sequencer is allowed",c
+"What is the purpose of the uvm_monitor in the diagram?","a) Generate random stimulus","b) Apply outputs to DUT","c) Observe DUT outputs and send them to scoreboard","d) Check assertions",c
+"What does the following monitor code achieve? always @(posedge vif.clk) begin if (vif.valid && vif.ready) transaction_collected = 1; end","a) Drives DUT interface","b) Starts testbench reset","c) Detects a successful transaction on the bus","d) Generates a clock",c
+"How do assertions improve verification?","a) They replace the need for monitors","b) They increase simulation speed","c) They automatically correct design bugs","d) They provide localized, automatic checks of design behavior",d
+"In a complex UVM environment, what does a scoreboard typically do?","a) Drives the DUT interface","b) Checks correctness of DUT output against a reference model","c) Logs simulation statistics","d) Monitors transactions for coverage",b
+"What is the main purpose of the pre_body() method in a UVM sequence?","a) Drive signals to the DUT","b) Set up the DUT","c) Execute initial setup before the main body()","d) Start the driver",c
+"In a UVM sequence, what method is typically called after all transactions are completed?","a) run()","b) post_body()","c) randomize()","d) reset_phase()",b
+"What does "coverage-driven verification" aim to do?","a) Stop simulation early","b) Minimize testbench components","c) Increase confidence by ensuring all functionality is tested","d) Generate RTL automatically",c
+"What is a typical way to implement functional coverage in SystemVerilog?","a) Using always blocks","b) Using covergroup and coverpoint","c) Using assertions only","d) Using virtual interfaces",b
+"Which UVM construct enables reusability and hierarchy in component instantiation?","a) Assertions","b) Phases","c) Factory override","d) Interface binding",c
+"Analyze the following code: covergroup cg @ (posedge clk); coverpoint op; coverpoint a; coverpoint b; endgroup","a) Assertion block","b) Constrained-random logic","c) Coverage group monitoring op, a, and b","d) Driver interface logic",c
+"What would happen if start_item() is called twice without finish_item() in between?","a) A compile error","b) The sequence stalls","c) A fatal runtime error occurs","d) Random values are discarded",c
+"Which UVM method does the driver use to indicate that it completed a transaction?","a) finish_item()","b) item_done()","c) seq_item_port.get_next_item()","d) end_phase()",b
+"What does a scoreboard typically compare?","a) Simulation time and waveforms","b) Agent activity and interface latency","c) DUT output vs expected result from a reference model","d) DUT power usage vs frequency",c
+"Complete the missing logic in a UVM testbench: task run_phase(uvm_phase phase); ... if (scoreboard.check_passed()) `uvm_info("RESULT", "Test Passed", UVM_LOW) else `uvm_error("RESULT", "Test Failed") endtask","a) A testbench constructor","b) Part of the DUT module","c) A functional check at the end of simulation","d) A phase registration for test classes",c
+"What does FPGA stand for?","a) Field Programmable Gate Array","b) Flexible Programmable General Architecture","c) Fast Processing General Array","d) Fixed Programmable Gate Array",a
+"Which of these is NOT a main component of modern FPGAs?","a) LUTs","b) Flip-flops","c) CPUs","d) BRAMs",c
+"What type of logic can be implemented using Look-Up Tables (LUTs)?","a) Sequential logic only","b) Combinational logic only","c) Both combinational and sequential logic","d) Neither combinational nor sequential logic",c
+"Which company produced the first commercial FPGA in 1985?","a) Intel","b) Xilinx","c) Altera","d) Lattice",b
+"What is the main advantage of FPGA over ASIC in terms of development?","a) Lower unit cost","b) Faster time-to-market","c) Lower power consumption","d) Higher performance",b
+"Which of these is NOT a type of programmable logic device?","a) FPGA","b) CPLD","c) ASIC","d) PAL",c
+"What does HDL stand for in FPGA design?","a) Hardware Design Language","b) High-level Design Language","c) Hardware Description Language","d) Hybrid Design Logic",c
+"Which of these is NOT a common FPGA manufacturer?","a) Xilinx","b) Intel (Altera)","c) AMD","d) Lattice Semiconductor",c
+"What type of processor is embedded within the FPGA fabric?","a) Hard core processor","b) Soft core processor","c) Both A and B","d) Neither A nor B",c
+"Which of these is NOT a common application of FPGAs?","a) Medical Imaging","b) Cryptography","c) Vacuum Cleaner Control","d) Aerospace/Defense",c
+"What is the primary purpose of Look-Up Tables (LUTs) in FPGAs?","a) To store data permanently","b) To implement combinational logic","c) To act as a clock signal generator","d) To provide power to the FPGA",b
+"Which component in an FPGA ensures that the clock signal reaches all flip-flops simultaneously?","a) Clock Distribution Network","b) BRAM","c) GPIO","d) DSP Block",a
+"What type of memory is commonly used in FPGAs to store configuration data?","a) DRAM","b) SRAM","c) Flash","d) EEPROM",b
+"Which of the following is NOT a common feature of modern FPGAs?","a) Embedded processors","b) Analog-to-digital converters","c) Digital Signal Processing (DSP) blocks","d) Block RAM (BRAM)",b
+"What is the primary difference between a soft core processor and a hard core processor in FPGAs?","a) Soft core processors are slower","b) Hard core processors are implemented in hardware, while soft core processors are programmable","c) Soft core processors cannot run operating systems","d) Hard core processors are less reliable",b
+"Which of the following FPGA manufacturers uses Flash-based technology for some of its devices?","a) Xilinx","b) Intel (Altera)","c) Microsemi (Actel)","d) Lattice Semiconductor",c
+"What is the role of interconnection boxes (CB) in FPGA architecture?","a) To connect logic blocks to the routing network","b) To store configuration data","c) To generate clock signals","d) To implement sequential logic",a
+"Which of the following is NOT a typical application of FPGAs?","a) Cryptography","b) High-performance computing","c) Mass production of consumer electronics","d) Medical imaging",c
+"What is the primary advantage of using a System-on-Chip (SoC) FPGA?","a) It eliminates the need for external memory","b) It integrates both programmable logic and a hard core processor","c) It reduces the size of the FPGA","d) It simplifies the programming process",b
+"Which of the following is a disadvantage of FPGAs compared to ASICs?","a) Lower performance","b) Higher unit cost","c) Longer time-to-market","d) Limited reprogrammability",b
+"What does RTL stand for in FPGA design?","a) Real-Time Logic","b) Register Transfer Level","c) Reduced Timing Loop","d) Random Trigger Logic",b
+"Which of the following is NOT a step in the FPGA design flow?","a) Synthesis","b) Floorplanning","c) Photolithography","d) Placement and Routing",c
+"What is the purpose of a testbench in FPGA design?","a) To simulate and verify the functionality of the design","b) To configure the FPGA hardware","c) To program the FPGA via JTAG","d) To optimize power consumption",a
+"Which of the following statements about HDL is TRUE?","a) HDL is used to describe software algorithms","b) HDL is used to describe hardware behavior and structure","c) HDL cannot be synthesized into hardware","d) HDL is only used for simulation",b
+"What is the primary difference between sequential and combinational logic in FPGA design?","a) Sequential logic depends on clock signals, while combinational logic does not","b) Combinational logic is faster than sequential logic","c) Sequential logic cannot be implemented in FPGAs","d) Combinational logic requires more resources",a
+"Which of the following is a rule for coding combinational logic in HDL?","a) The sensitivity list must include all input signals","b) Only the clock signal should be in the sensitivity list","c) All outputs must be assigned asynchronously","d) Reset signals are mandatory",a
+"What is the purpose of the reset scheme in FPGA design?","a) To initialize registers to a known state","b) To reduce power consumption","c) To increase clock frequency","d) To simplify the synthesis process",a
+"Which of the following is a common method for programming an FPGA?","a) JTAG","b) USB-C","c) HDMI","d) Ethernet",a
+"What is the role of the synthesis step in the FPGA design flow?","a) To translate HDL code into a netlist of logical functions","b) To simulate the design","c) To place and route the design","d) To generate the GDSII file",a
+"Which of the following is NOT a synthesizable construct in HDL?","a) Wait statement","b) Flip-flop","c) Multiplexer","d) Adder",a
+"What does ASIC stand for?","a) Application-Specific Integrated Circuit","b) Advanced Signal Interface Circuit","c) Automated System Integration Chip","d) Adaptive Silicon Interconnect Circuit",a
+"Which of the following is a key advantage of ASICs over FPGAs?","a) Faster time-to-market","b) Lower unit cost for mass production","c) Reprogrammability","d) Simpler design tools",b
+"What is the primary disadvantage of ASICs compared to FPGAs?","a) Higher power consumption","b) Longer development time","c) Limited performance","d) Lack of specialized hardware blocks",b
+"Which of the following is a step unique to the ASIC design flow?","a) Floorplanning","b) Synthesis","c) Place and Route","d) GDSII Generation",d
+"What is the primary purpose of DRC/LVS checks in ASIC design?","a) To verify timing constraints","b) To ensure design rules are followed and layout matches the schematic","c) To optimize power consumption","d) To simulate the design",b
+"Which of the following is NOT a type of ASIC?","a) Full-Custom ASIC","b) Semi-Custom ASIC","c) Standard-Cell ASIC","d) Programmable ASIC",d
+"What is the primary advantage of full-custom ASICs?","a) Faster design time","b) Lower cost","c) Higher performance","d) Easier verification",c
+"Which of the following is a disadvantage of full-custom ASICs?","a) Lower performance","b) Higher design complexity and cost","c) Limited flexibility","d) Lack of standard libraries",b
+"What is the primary difference between standard-cell ASICs and FPGAs?","a) Standard-cell ASICs are reprogrammable","b) Standard-cell ASICs use pre-designed cells, while FPGAs use programmable logic","c) Standard-cell ASICs are slower","d) Standard-cell ASICs consume more power",b
+"Which of the following is a common tool used in the ASIC design flow?","a) Vivado","b) Quartus","c) Cadence Genus","d) Lattice Radiant",c
+"What is the primary purpose of TCL scripting in FPGA/ASIC design?","a) To simulate designs","b) To automate design tasks and flows","c) To program the FPGA hardware","d) To generate HDL code",b
+"Which of the following is NOT a feature of TCL scripting?","a) Variable substitution","b) Command substitution","c) Object-oriented programming","d) List manipulation",c
+"What is the role of the expr command in TCL?","a) To evaluate mathematical expressions","b) To define procedures","c) To manipulate strings","d) To open files",a
+"Which of the following is a valid TCL control structure?","a) if...else","b) switch","c) while","d) All of the above",d
+"What is the purpose of the proc command in TCL?","a) To define variables","b) To create procedures","c) To read files","d) To write to files",b
+"Which of the following is NOT a valid way to read data from a file in TCL?","a) read","b) gets","c) scan","d) write",d
+"What is the primary advantage of using semi-custom ASICs over full-custom ASICs?","a) Higher performance","b) Lower design complexity and cost","c) Greater flexibility","d) Smaller die size",b
+"Which of the following is a common metric for measuring the size of an ASIC?","a) Gate count","b) Clock frequency","c) Power consumption","d) Number of transistors",a
+"What is the primary purpose of floorplanning in ASIC design?","a) To verify timing constraints","b) To optimize placement of blocks on the chip","c) To generate the netlist","d) To simulate the design",b
+"Which of the following is NOT a step in the RTL-to-GDSII ASIC flow?","a) Synthesis","b) Place and Route","c) JTAG programming","d) DRC/LVS checks",c
+"What was the first integrated circuit flip-flop built with?","a) Three transistors","b) Two transistors","c) Four transistors","d) One transistor",b
+"Which year marks the creation of the first integrated circuit by Jack Kilby?","a) 1956","b) 1958","c) 1960","d) 1962",b
+"What is the primary reason for the rapid growth of the semiconductor industry?","a) Decreased power consumption","b) Increased transistor count per chip","c) Lower manufacturing costs","d) Improved software tools",b
+"What does the term "Kgate" refer to in semiconductor design?","a) 1000 NAND gates","b) 1000 transistors","c) 1000 memory cells","d) 1000 flip-flops",a
+"Which process technology is commonly used in modern microprocessors?","a) Bipolar Junction Transistor (BJT)","b) Complementary Metal-Oxide-Semiconductor (CMOS)","c) Gallium Arsenide (GaAs)","d) Silicon-Germanium (SiGe)",b
+"What is the purpose of using standard cells in VLSI design?","a) To reduce design time","b) To increase power consumption","c) To simplify testing","d) To improve signal integrity",a
+"In a stick diagram, what does the color blue typically represent?","a) Polysilicon","b) Metal 1","c) N-diffusion","d) P-diffusion",a
+"What is the primary advantage of using a 2-level metal routing layer?","a) Reduced capacitance","b) Simplified layout","c) Higher speed","d) Lower cost",b
+"What causes subthreshold leakage in MOSFETs?","a) High gate voltage","b) Low threshold voltage","c) Short channel effects","d) Both B and C",d
+"What is the impact of increasing the channel length in a transistor?","a) Increases Ion","b) Reduces Ioff","c) Increases gate capacitance","d) Reduces mobility",b
+"What percentage of energy in nanometer technologies is attributed to leakage?","a) 10%","b) 20%","c) 30%","d) 50%",c
+"Which technique is used to reduce dynamic power consumption?","a) Voltage scaling","b) Increasing clock frequency","c) Adding more transistors","d) Using larger memory cells",a
+"What is the primary cause of short-circuit power dissipation in CMOS circuits?","a) Overlapping pMOS and nMOS conduction","b) High capacitance","c) Long interconnects","d) High resistance",a
+"What is the effect of lowering the supply voltage (VDD) on power consumption?","a) Quadratic reduction in power","b) Linear reduction in power","c) No change in power","d) Exponential increase in power",a
+"What is the role of body biasing in reducing leakage current?","a) Increases threshold voltage","b) Decreases threshold voltage","c) Reduces gate capacitance","d) Increases mobility",a
+"What causes variability in nanometer-scale transistors?","a) Dopant fluctuations","b) Photolithography errors","c) Thermal noise","d) All of the above",d
+"What is the Pelgrom model used for?","a) Predicting delay","b) Modeling variability","c) Estimating power","d) Calculating capacitance",b
+"What is the primary challenge of sub-wavelength lithography?","a) Increased power consumption","b) Layout mismatches","c) Longer design time","d) Higher cost",b
+"What is the impact of edge roughness in polysilicon gates?","a) Increased leakage","b) Reduced speed","c) Higher variability","d) All of the above",d
+"What is the primary cause of crosstalk in interconnects?","a) Capacitive coupling","b) Inductive coupling","c) Resistive losses","d) Both A and B",d
+"What is the typical structure of an SRAM cell?","a) 4 transistors","b) 6 transistors","c) 8 transistors","d) 10 transistors",b
+"What is the main advantage of DRAM over SRAM?","a) Higher speed","b) Lower power consumption","c) Higher density","d) Simpler design",c
+"What is the primary function of a multiplexer in a processor datapath?","a) Data storage","b) Signal selection","c) Clock generation","d) Power management",b
+"What is the purpose of a barrel shifter in a processor?","a) Arithmetic operations","b) Logical operations","c) Bitwise shifting","d) Memory access",c
+"What is the role of the program counter (PC) in a processor?","a) Stores data","b) Tracks instruction addresses","c) Performs arithmetic","d) Manages interrupts",b
+"What is the primary benefit of using FinFETs in modern designs?","a) Reduced leakage","b) Higher speed","c) Lower cost","d) Simpler layout",a
+"What is the role of Monte Carlo simulations in circuit design?","a) Timing analysis","b) Variability analysis","c) Power estimation","d) Layout optimization",b
+"What is the primary challenge of designing multicore processors?","a) Power distribution","b) Inter-core communication","c) Thermal management","d) All of the above",d
+"What is the purpose of clock gating in low-power design?","a) Reduce dynamic power","b) Increase clock frequency","c) Improve timing","d) Reduce leakage",a
+"What is the primary advantage of using SOI (Silicon-On-Insulator) technology?","a) Reduced parasitic capacitance","b) Higher mobility","c) Lower leakage","d) All of the above",d
+"What is the typical length of a critical path in a 65nm process?","a) 100ps","b) 200ps","c) 300ps","d) 400ps",b
+"What is the primary disadvantage of using high-k dielectrics?","a) Increased cost","b) Reduced mobility","c) Higher leakage","d) Larger area",b
+"What is the role of repeaters in long interconnects?","a) Reduce delay","b) Increase capacitance","c) Improve signal integrity","d) Both A and C",d
+"What is the primary cause of electromigration in interconnects?","a) High current density","b) High temperature","c) Long wire lengths","d) Both A and B",d
+"What is the primary advantage of using copper interconnects?","a) Lower resistance","b) Higher capacitance","c) Lower cost","d) Simpler fabrication",a
+"What is the primary function of a p-n junction diode?","a) Amplify signals","b) Store charge","c) Allow current to flow in one direction","d) Generate oscillations",c
+"What happens when a reverse bias is applied to a p-n junction?","a) The depletion region narrows","b) The depletion region widens","c) Current flows freely","d) The junction becomes conductive",b
+"What is the primary mechanism of current flow in a MOSFET channel?","a) Drift current","b) Diffusion current","c) Tunneling current","d) Recombination current",a
+"What is the role of the substrate in a MOSFET?","a) To provide mechanical support","b) To act as a heat sink","c) To establish the electrical properties of the device","d) To reduce leakage current",c
+"What causes the "body effect" in a MOSFET?","a) Changes in gate voltage","b) Changes in drain voltage","c) Changes in substrate bias","d) Changes in temperature",c
+"What is the purpose of using repeaters in long interconnects?","a) Reduce resistance","b) Compensate for RC delay","c) Increase capacitance","d) Improve thermal management",b
+"What is the impact of increasing the width of a transistor in a digital circuit?","a) Increases drive current","b) Reduces gate capacitance","c) Decreases switching speed","d) Increases leakage current",a
+"What is the primary advantage of using copper interconnects over aluminum?","a) Higher resistivity","b) Lower resistivity","c) Higher melting point","d) Simpler fabrication process",b
+"What is the role of decoupling capacitors in VLSI design?","a) Store data","b) Reduce power supply noise","c) Increase clock frequency","d) Act as resistors",b
+"What is the primary benefit of dynamic voltage scaling (DVS)?","a) Increase clock frequency","b) Reduce dynamic power consumption","c) Improve signal integrity","d) Simplify layout",b
+"What is the impact of reducing the supply voltage (VDD) on delay?","a) Decreases delay","b) Increases delay","c) No impact on delay","d) Eliminates delay",b
+"What is the role of clock skew in synchronous circuits?","a) Improve timing accuracy","b) Reduce power consumption","c) Cause timing violations","d) Increase clock frequency",c
+"What is the primary goal of power gating in low-power designs?","a) Reduce dynamic power","b) Reduce static power","c) Increase clock frequency","d) Improve signal integrity",b
+"What determines the MOSFET operation region (triode vs. saturation)?","a) Gate-source voltage only","b) Drain-source voltage relative to (V_gs - V_th)","c) Substrate doping concentration","d) Oxide thickness",b
+"How does fan-out affect propagation delay in digital circuits?","a) Increases delay linearly","b) Reduces delay exponentially","c) Has no impact on delay","d) Only affects power consumption",a
